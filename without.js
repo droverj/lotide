@@ -2,7 +2,6 @@ const eqArrays = function(actual, expected) {
   for (const elmt in actual) {
     if (actual[elmt] !== expected[elmt]) {
       return false;
-      // loops through the first array and compares each element to the same index in the second array
     }
     if (expected.length !== actual.length) {
       return false;
@@ -29,7 +28,7 @@ const without = function(source, itemToRemove) {
   for (const num of source) {
     // for... of loop - returns a list of values of numeric properties
     if (typeof source[num] === "number" && source[num] !== itemToRemove[num]) {
-      filtered.push(source[num])
+      filtered.push(source[num]);
       // source array is pushed into new array (filtered) if an element didnt also appear
       //  in itemsToRemove array
     }
@@ -52,7 +51,7 @@ const without = function(source, itemToRemove) {
     }
   }
   return filtered;
-}
+};
 
 
 // without([10,0,1], [, 1])
@@ -74,6 +73,6 @@ const without = function(source, itemToRemove) {
 // assertArraysEqual(without([1, 2, 3], [1]), [2, 3]);
 // assertArraysEqual(without(["hello", "world", "lighthouse"], ["lighthouse"]), ["hello", "world"])
 
-// assertArraysEqual(without([1, 2, 3], ["1", 2, 3]), [1]) 
+// assertArraysEqual(without([1, 2, 3], ["1", 2, 3]), [1])
 // assertArraysEqual(without([""], ["1"]), [""])
 // assertArraysEqual(without([], ["1"]), [])
