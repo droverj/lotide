@@ -11,14 +11,17 @@ const assertEqual = function(actual, expected) {
 // scans the object => returns the first key which contains the given value
 // if no key with that value is found, it should return undefined
 const findKeyByValue = function(object, value) {
-  const result = ""
+  let result;
   const keys = Object.keys(object);
-  const values = Object.values(object);
 
   for (const key of keys) {
     // console.log(object[key]) // The Wire
     // console.log(key); // drama
+    if (value === object[key]) {
+      result = key;
+    }
   }
+  console.log(result);
   return result;
 }
 
