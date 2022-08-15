@@ -11,6 +11,7 @@ const assertEqual = function(actual, expected) {
 // returns a count of each of the letters in that sentence
 // will return an object
 const countLetters = function(sentence) {
+  const result = {};
 
   if (typeof sentence !== "string" || sentence === "") {
     return undefined;
@@ -18,7 +19,6 @@ const countLetters = function(sentence) {
   
   sentence = sentence.toLowerCase();
 
-  let result = {};
   for (const letter of sentence) {
     if (letter !== " ") {
       // skip spaces
