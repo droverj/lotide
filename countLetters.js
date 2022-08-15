@@ -11,7 +11,12 @@ const assertEqual = function(actual, expected) {
 // returns a count of each of the letters in that sentence
 // will return an object
 const countLetters = function(sentence) {
-  sentence.toLowerCase();
+
+  if (typeof sentence !== "string" || sentence === "") {
+    return undefined;
+  }
+  
+  sentence = sentence.toLowerCase();
 
   let result = {};
   for (const letter of sentence) {
@@ -44,4 +49,10 @@ assertEqual(result2["e"], 3);
 assertEqual(result2[" "], undefined);
 
 const result3 = countLetters("wEiRd RiGhT");
-assertEqual(result3["r"], 2); // expected 2, returned undefined
+assertEqual(result3["r"], 2); // expected 2, returned undefined => fixed
+
+const result4 = countLetters(123);
+assertEqual(result4, undefined);
+
+const result5 = countLetters("");
+assertEqual(result5, undefined);
