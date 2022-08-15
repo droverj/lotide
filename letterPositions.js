@@ -21,10 +21,22 @@ const assertArraysEqual = function(actual, expected) {
 };
 
 const letterPositions = function(sentence) {
-  let results = {};
+  const results = {};
+
+  sentence = sentence.toLowerCase();
+
+  for (let i = 0; i < sentence.length; i++) {
+    if (results[sentence[i]]) {
+      results[sentence[i]].push(i);
+    } else {
+      results[sentence[i]] = [i];
+    }
+  }
+
+  console.log(results);
 
   return results;
 };
 
-result1 = letterPositions("hello");
-assertArraysEqual(result1["h"], [0])
+// letterPositions("hello");
+assertArraysEqual(letterPositions("hello").e, [1]);
