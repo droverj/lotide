@@ -32,17 +32,17 @@ const eqObjects = function(object1, object2) {
   if (keys1.length !== keys2.length) {
     return false;
   }
+  // if the number of keys aren't equal, return false
 
   for (const key in object1) {
     if (Array.isArray(object1[key]) === true) {
       return eqArrays(object1[key], object2[key]);
     }
+    // If the object has an array as a value for a key, use the eqArrays function to compare
 
-    if (object1[key].length !== object2[key].length) {
-      return false;
-    }
     if (object1[key] === object2[key]) {
       result = true;
+      // let's the loop complete
     }
   }
   return result;
