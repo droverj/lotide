@@ -54,8 +54,8 @@ const cd2 = { c: "1", d: ["2", 3, 4] };
 const cd3 = { c: "1", d: [3, "2", 4] };
 const cd4 = { c: "1", d: ["3", 2, 4] };
 
-assertObjectsEqual(ab, ba) // => true
-assertObjectsEqual(ab, abc) // => false
-assertObjectsEqual(cd, dc) // => true
-assertObjectsEqual(cd2, cd3) // => false
-assertObjectsEqual(cd2, cd4) // => false
+assertObjectsEqual(ab, ba); // => true
+assertObjectsEqual(ab, abc); // => false
+assertObjectsEqual(cd, dc); // => true
+assertObjectsEqual(cd2, cd3); // => false
+assertObjectsEqual(cd2, cd4); // => false
