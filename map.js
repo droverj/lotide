@@ -44,6 +44,8 @@ assertArraysEqual(results2, []);
 
 const oneWord = ["one"];
 
-const results3 = map(oneWord, word => word[2]);
+const results3 = map(words, word => word === "control");
 
 assertArraysEqual(results3, ["e"]);
+
+// work with a mentor on how to refactor this 
