@@ -1,4 +1,12 @@
 const eqArrays = function(actual, expected) {
+  for (const elmt of actual) {
+    if (typeof actual[elmt] === "string" && typeof expected[elmt] !== "string") {
+      return false;
+    }
+    if (typeof expected[elmt] === "string" && typeof actual[elmt] !== "string") {
+      return false;
+    }
+  }
   for (const elmt in actual) {
     if (actual[elmt] !== expected[elmt]) {
       return false;
@@ -6,8 +14,10 @@ const eqArrays = function(actual, expected) {
     if (expected.length !== actual.length) {
       return false;
     }
+    if (actual[elmt] === expected[elmt]) {
+      return true;
+    }
   }
-  return true;
 };
 
 const assertArraysEqual = function(actual, expected) {
@@ -27,9 +37,9 @@ const flatten = function(arrays) {
   for (let i = 0; i < arrays.length; i++) {
     // loop through the outer array
     if (Array.isArray(arrays[i]) === false) {
-      result.push(arrays[i])
+      result.push(arrays[i]);
       // if the element is not an array, push it into a new array
-    };
+    }
     if (Array.isArray(arrays[i]) === true) {
       for (const each of arrays[i]) {
         result.push(each);

@@ -8,6 +8,14 @@ const assertEqual = function(actual, expected) {
 };
 
 const eqArrays = function(actual, expected) {
+  for (const elmt of actual) {
+    if (typeof actual[elmt] === "string" && typeof expected[elmt] !== "string") {
+      return false;
+    }
+    if (typeof expected[elmt] === "string" && typeof actual[elmt] !== "string") {
+      return false;
+    }
+  }
   for (const elmt in actual) {
     if (actual[elmt] !== expected[elmt]) {
       return false;
@@ -15,8 +23,10 @@ const eqArrays = function(actual, expected) {
     if (expected.length !== actual.length) {
       return false;
     }
+    if (actual[elmt] === expected[elmt]) {
+      return true;
+    }
   }
-  return true;
 };
 
 // function takes in two objects as the arguments
@@ -65,7 +75,7 @@ const dc = { d: ["2", 3], c: "1" };
 eqObjects(cd, dc); // => true
 
 const cd2 = { c: "1", d: ["2", 3, 4] };
-const cd3 = { c: "1", d: [3,"2", 4] };
+const cd3 = { c: "1", d: [3, "2", 4] };
 
 eqObjects(cd, cd2); // => false
 eqObjects(cd2, cd3);

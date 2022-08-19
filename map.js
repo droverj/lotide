@@ -1,3 +1,34 @@
+const eqArrays = function(actual, expected) {
+  for (const elmt of actual) {
+    if (typeof actual[elmt] === "string" && typeof expected[elmt] !== "string") {
+      return false;
+    }
+    if (typeof expected[elmt] === "string" && typeof actual[elmt] !== "string") {
+      return false;
+    }
+  }
+  for (const elmt in actual) {
+    if (actual[elmt] !== expected[elmt]) {
+      return false;
+      // loops through the first array and compares each element to the same index in the second array
+    }
+    if (expected.length !== actual.length) {
+      return false;
+    }
+    if (actual[elmt] === expected[elmt]) {
+      return true;
+    }
+  }
+};
+
+const assertArraysEqual = function(actual, expected) {
+  if (eqArrays(actual, expected) === true) {
+    console.log(`✅✅✅ Assertion Passed: ${actual} === ${expected}`);
+  }
+  if (eqArrays(actual, expected) === false) {
+    console.log(`❌❌❌ Assertion Failed: ${actual} !== ${expected}`);
+  }
+};
 const words = ["ground", "control", "to", "major", "tom"];
 
 // A function which takes in an array and a callback.
@@ -13,26 +44,6 @@ const map = function(array, callback) {
 
 // TEST CODE
 
-const eqArrays = function(actual, expected) {
-  for (const elmt in actual) {
-    if (actual[elmt] !== expected[elmt]) {
-      return false;
-    }
-    if (expected.length !== actual.length) {
-      return false;
-    }
-  }
-  return true;
-};
-
-const assertArraysEqual = function(actual, expected) {
-  if (eqArrays(actual, expected) === true) {
-    console.log(`✅✅✅ Assertion Passed: ${actual} === ${expected}`);
-  }
-  if (eqArrays(actual, expected) === false) {
-    console.log(`❌❌❌ Assertion Failed: ${actual} !== ${expected}`);
-  }
-};
 
 const results1 = map(words, word => word[0]);
 assertArraysEqual(results1, [ 'g', 'c', 't', 'm', 't' ]);

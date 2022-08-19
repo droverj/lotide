@@ -1,13 +1,24 @@
 const eqArrays = function(actual, expected) {
+  for (const elmt of actual) {
+    if (typeof actual[elmt] === "string" && typeof expected[elmt] !== "string") {
+      return false;
+    }
+    if (typeof expected[elmt] === "string" && typeof actual[elmt] !== "string") {
+      return false;
+    }
+  }
   for (const elmt in actual) {
     if (actual[elmt] !== expected[elmt]) {
       return false;
+      // loops through the first array and compares each element to the same index in the second array
     }
     if (expected.length !== actual.length) {
       return false;
     }
+    if (actual[elmt] === expected[elmt]) {
+      return true;
+    }
   }
-  return true;
 };
 
 const assertArraysEqual = function(actual, expected) {
@@ -54,25 +65,23 @@ const without = function(source, itemToRemove) {
 };
 
 
-// without([10,0,1], [, 1])
- 
-// assertArraysEqual(without(["1", "2", "3"], ["2"]), ["1", "3"])
-// assertArraysEqual(without([10, 0, 1], [1]), [10, 0])
+assertArraysEqual(without(["1", "2", "3"], ["2"]), ["1", "3"]);
+assertArraysEqual(without([10, 0, 1], [1]), [10, 0]);
 
-// without(["1", "2", "3"], ["2"]); // => ["1", "3"]
-// without(["hello", "world", "lighthouse"], ["world"]) // => ["hello", "lighthouse"]
+without(["1", "2", "3"], ["2"]); // => ["1", "3"]
+without(["hello", "world", "lighthouse"], ["world"]); // => ["hello", "lighthouse"]
 
-// without([1, 2, 3], [1, "2", "3"]); // => [2, 3]
-// without(["1", "2", "3"], [1, 2, "3"]); // => ["1", "2"]
-// without(["1"], ["1"]);
+without([1, 2, 3], [1, "2", "3"]); // => [2, 3]
+without(["1", "2", "3"], [1, 2, "3"]); // => ["1", "2"]
+without(["1"], ["1"]);
 
-// const words = ["hello", "world", "lighthouse"];
-// without(words, ["lighthouse"]);
-// assertArraysEqual(words, ["hello", "world", "lighthouse"]);
+const words = ["hello", "world", "lighthouse"];
+without(words, ["lighthouse"]);
+assertArraysEqual(words, ["hello", "world", "lighthouse"]);
 
-// assertArraysEqual(without([1, 2, 3], [1]), [2, 3]);
-// assertArraysEqual(without(["hello", "world", "lighthouse"], ["lighthouse"]), ["hello", "world"])
+assertArraysEqual(without([1, 2, 3], [1]), [2, 3]);
+assertArraysEqual(without(["hello", "world", "lighthouse"], ["lighthouse"]), ["hello", "world"]);
 
-// assertArraysEqual(without([1, 2, 3], ["1", 2, 3]), [1])
-// assertArraysEqual(without([""], ["1"]), [""])
-// assertArraysEqual(without([], ["1"]), [])
+assertArraysEqual(without([1, 2, 3], ["1", 2, 3]), [1]);
+assertArraysEqual(without([""], ["1"]), [""]);
+assertArraysEqual(without([], ["1"]), []);
