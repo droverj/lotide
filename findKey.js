@@ -13,15 +13,16 @@ const findKey = function(object, callback) {
   const keys = Object.keys(object);
   const values = Object.values(object);
   
-  for (const item of values) {
-    console.log(item);
-    console.log(callback(item));
+  for (const item of keys) {
+    if (callback(object[item]) === true) {
+      return (item);
+    }
   }
 };
 
 // TEST CODE
 
-findKey({
+results1 = findKey({
   "Blue Hill":  { stars: 1 },
   "Akaleri":    { stars: 3 },
   "noma":       { stars: 2 },
@@ -29,3 +30,5 @@ findKey({
   "Ora":        { stars: 2 },
   "Akelarre":   { stars: 3 }
 }, x => x.stars === 2); // => "noma"
+
+console.log(results1);
