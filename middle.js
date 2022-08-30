@@ -1,24 +1,3 @@
-const eqArrays = function(actual, expected) {
-  for (const elmt in actual) {
-    if (actual[elmt] !== expected[elmt]) {
-      return false;
-    }
-    if (expected.length !== actual.length) {
-      return false;
-    }
-  }
-  return true;
-};
-
-const assertArraysEqual = function(actual, expected) {
-  if (eqArrays(actual, expected) === true) {
-    console.log(`✅✅✅ Assertion Passed: ${actual} === ${expected}`);
-  }
-  if (eqArrays(actual, expected) === false) {
-    console.log(`❌❌❌ Assertion Failed: ${actual} !== ${expected}`);
-  }
-};
-
 // A function which returns only the middle element(s) of an array
 // arrays with 1 or 2 elements have no middle
 // arrays > 2 with an even number of elements return two middle elements
@@ -43,14 +22,4 @@ const middle = function(array) {
   }
 };
 
-// TEST CODE
-
-// middle([1, 2, 3, 4]);
-
-assertArraysEqual(middle([1, 2, 3, 4, 5]), [3]);
-assertArraysEqual(middle([1, 2, 3, 4]), [2, 3]);
-assertArraysEqual(middle([1, 2]), []);
-assertArraysEqual(middle([1]), []);
-assertArraysEqual(middle([]), []);
-assertArraysEqual(middle([1, 2, 3, 4, 5, 6]), [3, 4]);
-assertArraysEqual(middle([1, 2, 3]), [2]);
+module.exports = middle;
