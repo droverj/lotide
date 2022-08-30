@@ -1,4 +1,4 @@
-// Assertion function to test if expected outputs return true
+// Assertion function to test if expected output returns true
 
 const assertEqual = function(actual, expected) {
   if (actual === expected) {
@@ -9,9 +9,4 @@ const assertEqual = function(actual, expected) {
   }
 };
 
-// TEST CODE
-// assertEqual("Lighthouse Labs", "Bootcamp");
-// assertEqual("Lighthouse", "Lighthouse");
-// assertEqual(1, 1);
-// assertEqual(0, 1);
-// assertEqual("1", 1);
+module.exports = assertEqual;

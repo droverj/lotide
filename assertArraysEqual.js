@@ -23,9 +23,6 @@ const eqArrays = function(actual, expected) {
 
 
 const assertArraysEqual = function(actual, expected) {
-  if (eqArrays(actual, expected) === undefined) {
-    console.log(`🟡🟡🟡 Assertion Undefined`);
-  }
   if (eqArrays(actual, expected) === true) {
     console.log(`✅✅✅ Assertion Passed: ${actual} === ${expected}`);
   }
