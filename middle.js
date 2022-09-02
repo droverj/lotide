@@ -4,6 +4,10 @@
 // arrays > 2 with an uneven number of elements return one element
 
 const middle = function(array) {
+  if(!Array.isArray(array)) {
+    return undefined;
+  }
+  
   let result = [];
 
   let mid = Math.round(array.length / 2);
@@ -13,7 +17,8 @@ const middle = function(array) {
     return [];
   }
   if (array.length % 2 !== 0) {
-    return array[mid - 1];
+    result.push(array[mid - 1]);
+    return result;
   }
   if (array.length % 2 === 0) {
     result.push(array[mid - 1]);
