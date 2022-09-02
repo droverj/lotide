@@ -37,22 +37,24 @@ const countLetters = function(sentence) {
 };
 
 
-const result1 = countLetters("hello");
-// { "h": 1, "e": 1, "l": 2, "o": 1 };
+// const result1 = countLetters("hello");
+// // { "h": 1, "e": 1, "l": 2, "o": 1 };
 
-assertEqual(result1["h"], 1); // h appears in hello once, compares the value in "h" key
-assertEqual(result1["l"], 2);
+// assertEqual(result1["h"], 1); // h appears in hello once, compares the value in "h" key
+// assertEqual(result1["l"], 2);
 
 
-const result2 = countLetters("lighthouse in the house");
-assertEqual(result2["e"], 3);
-assertEqual(result2[" "], undefined);
+// const result2 = countLetters("lighthouse in the house");
+// assertEqual(result2["e"], 3);
+// assertEqual(result2[" "], undefined);
 
-const result3 = countLetters("wEiRd RiGhT");
-assertEqual(result3["r"], 2); // expected 2, returned undefined => fixed
+// const result3 = countLetters("wEiRd RiGhT");
+// assertEqual(result3["r"], 2); // expected 2, returned undefined => fixed
 
-const result4 = countLetters(123);
-assertEqual(result4, undefined);
+// const result4 = countLetters(123);
+// assertEqual(result4, undefined);
 
-const result5 = countLetters("");
-assertEqual(result5, undefined);
+// const result5 = countLetters("");
+// assertEqual(result5, undefined);
+
+module.exports = countLetters;

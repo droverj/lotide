@@ -65,23 +65,25 @@ const without = function(source, itemToRemove) {
 };
 
 
-assertArraysEqual(without(["1", "2", "3"], ["2"]), ["1", "3"]);
-assertArraysEqual(without([10, 0, 1], [1]), [10, 0]);
+// assertArraysEqual(without(["1", "2", "3"], ["2"]), ["1", "3"]);
+// assertArraysEqual(without([10, 0, 1], [1]), [10, 0]);
 
-without(["1", "2", "3"], ["2"]); // => ["1", "3"]
-without(["hello", "world", "lighthouse"], ["world"]); // => ["hello", "lighthouse"]
+// without(["1", "2", "3"], ["2"]); // => ["1", "3"]
+// without(["hello", "world", "lighthouse"], ["world"]); // => ["hello", "lighthouse"]
 
-without([1, 2, 3], [1, "2", "3"]); // => [2, 3]
-without(["1", "2", "3"], [1, 2, "3"]); // => ["1", "2"]
-without(["1"], ["1"]);
+// without([1, 2, 3], [1, "2", "3"]); // => [2, 3]
+// without(["1", "2", "3"], [1, 2, "3"]); // => ["1", "2"]
+// without(["1"], ["1"]);
 
-const words = ["hello", "world", "lighthouse"];
-without(words, ["lighthouse"]);
-assertArraysEqual(words, ["hello", "world", "lighthouse"]);
+// const words = ["hello", "world", "lighthouse"];
+// without(words, ["lighthouse"]);
+// assertArraysEqual(words, ["hello", "world", "lighthouse"]);
 
-assertArraysEqual(without([1, 2, 3], [1]), [2, 3]);
-assertArraysEqual(without(["hello", "world", "lighthouse"], ["lighthouse"]), ["hello", "world"]);
+// assertArraysEqual(without([1, 2, 3], [1]), [2, 3]);
+// assertArraysEqual(without(["hello", "world", "lighthouse"], ["lighthouse"]), ["hello", "world"]);
 
-assertArraysEqual(without([1, 2, 3], ["1", 2, 3]), [1]);
-assertArraysEqual(without([""], ["1"]), [""]);
-assertArraysEqual(without([], ["1"]), []);
+// assertArraysEqual(without([1, 2, 3], ["1", 2, 3]), [1]);
+// assertArraysEqual(without([""], ["1"]), [""]);
+// assertArraysEqual(without([], ["1"]), []);
+
+module.exports = without;

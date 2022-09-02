@@ -27,26 +27,28 @@ const findKeyByValue = function(object, value) {
 
 
 // TEST CODE
-const bestTVShowsByGenre = {
-  "sci_fi": "The Expanse",
-  comedy: "Brooklyn Nine-Nine",
-  drama: "The Wire"
-};
+// const bestTVShowsByGenre = {
+//   "sci_fi": "The Expanse",
+//   comedy: "Brooklyn Nine-Nine",
+//   drama: "The Wire"
+// };
 
-assertEqual(findKeyByValue(bestTVShowsByGenre, "The Wire"), "drama");
-assertEqual(findKeyByValue(bestTVShowsByGenre, "That '70s Show"), undefined);
-assertEqual(findKeyByValue(bestTVShowsByGenre, "The Expanse"), "sci_fi");
-assertEqual(findKeyByValue(bestTVShowsByGenre, ""), undefined);
-assertEqual(findKeyByValue(bestTVShowsByGenre, 123), undefined);
+// assertEqual(findKeyByValue(bestTVShowsByGenre, "The Wire"), "drama");
+// assertEqual(findKeyByValue(bestTVShowsByGenre, "That '70s Show"), undefined);
+// assertEqual(findKeyByValue(bestTVShowsByGenre, "The Expanse"), "sci_fi");
+// assertEqual(findKeyByValue(bestTVShowsByGenre, ""), undefined);
+// assertEqual(findKeyByValue(bestTVShowsByGenre, 123), undefined);
 
-const funkyObject = {
-  array: [],
-  obj: { name: "Boston" },
-  string: "",
-  boolean: true
-};
+// const funkyObject = {
+//   array: [],
+//   obj: { name: "Boston" },
+//   string: "",
+//   boolean: true
+// };
 
-assertEqual(findKeyByValue(funkyObject, []), undefined);
-assertEqual(findKeyByValue(funkyObject, ""), "string");
-assertEqual(findKeyByValue(funkyObject, true), "boolean");
-// assertEqual(findKeyByValue(funkyObject, { name: "Boston" }), "obj");
+// assertEqual(findKeyByValue(funkyObject, []), undefined);
+// assertEqual(findKeyByValue(funkyObject, ""), "string");
+// assertEqual(findKeyByValue(funkyObject, true), "boolean");
+// // assertEqual(findKeyByValue(funkyObject, { name: "Boston" }), "obj");
+
+module.exports = findKeyByValue;

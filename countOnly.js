@@ -31,21 +31,23 @@ const countOnly = function(allItems, itemsToCount) {
 };
 // countOnly returns an object with a count on all the strings in allItems, the input array
 
-const firstNames = [
-  "Karl",
-  "Salima",
-  "Agouhanna",
-  "Fang",
-  "Kavith",
-  "Jason",
-  "Salima",
-  "Fang",
-  "Joe"
-];
+// const firstNames = [
+//   "Karl",
+//   "Salima",
+//   "Agouhanna",
+//   "Fang",
+//   "Kavith",
+//   "Jason",
+//   "Salima",
+//   "Fang",
+//   "Joe"
+// ];
 
-const result1 = countOnly(firstNames, { "Jason": true, "Karima": true, "Fang": true, "Agouhanna": false });
+// const result1 = countOnly(firstNames, { "Jason": true, "Karima": true, "Fang": true, "Agouhanna": false });
 
-assertEqual(result1["Jason"], 1); // true and appears in firstNames once
-assertEqual(result1["Karima"], undefined); // true and does not appear in firstNames
-assertEqual(result1["Fang"], 2); // true and appears in firstNames twice
-assertEqual(result1["Agouhanna"], undefined); // false and appears in firstNames once
+// assertEqual(result1["Jason"], 1); // true and appears in firstNames once
+// assertEqual(result1["Karima"], undefined); // true and does not appear in firstNames
+// assertEqual(result1["Fang"], 2); // true and appears in firstNames twice
+// assertEqual(result1["Agouhanna"], undefined); // false and appears in firstNames once
+
+module.exports = countOnly;

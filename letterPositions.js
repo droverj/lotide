@@ -42,9 +42,11 @@ const letterPositions = function(sentence) {
 };
 
 // letterPositions("hello");
-assertArraysEqual(letterPositions("hello").e, [1]);
-assertArraysEqual(letterPositions("lighthouse in the house").h, [3, 5, 15, 18]);
-assertArraysEqual(letterPositions(""), undefined);
-assertArraysEqual(letterPositions(123), undefined);
-assertArraysEqual(letterPositions([]), undefined);
-assertArraysEqual(letterPositions("HeLlO").l, [2, 3]);
+// assertArraysEqual(letterPositions("hello").e, [1]);
+// assertArraysEqual(letterPositions("lighthouse in the house").h, [3, 5, 15, 18]);
+// assertArraysEqual(letterPositions(""), undefined);
+// assertArraysEqual(letterPositions(123), undefined);
+// assertArraysEqual(letterPositions([]), undefined);
+// assertArraysEqual(letterPositions("HeLlO").l, [2, 3]);
+
+module.exports = letterPositions;

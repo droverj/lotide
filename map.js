@@ -45,22 +45,24 @@ const map = function(array, callback) {
 // TEST CODE
 
 
-const results1 = map(words, word => word[0]);
-assertArraysEqual(results1, [ 'g', 'c', 't', 'm', 't' ]);
+// const results1 = map(words, word => word[0]);
+// assertArraysEqual(results1, [ 'g', 'c', 't', 'm', 't' ]);
 
-const emptyArray = [];
-const results2 = map(emptyArray, word => word);
-assertArraysEqual(results2, []);
+// const emptyArray = [];
+// const results2 = map(emptyArray, word => word);
+// assertArraysEqual(results2, []);
 
-const nums = [1, 2, 3, 4, 5];
-const results3 = map(nums, num => num * 2);
-assertArraysEqual(results3, [2, 4, 6, 8, 10]);
+// const nums = [1, 2, 3, 4, 5];
+// const results3 = map(nums, num => num * 2);
+// assertArraysEqual(results3, [2, 4, 6, 8, 10]);
 
-const results4 = map(words, word => word.slice(1));
-assertArraysEqual(results4, [ 'round', 'ontrol', 'o', 'ajor', 'om' ]);
+// const results4 = map(words, word => word.slice(1));
+// assertArraysEqual(results4, [ 'round', 'ontrol', 'o', 'ajor', 'om' ]);
 
-const results5 = map(words, word => word[0].toUpperCase() + word.slice(1));
-assertArraysEqual(results5, ['Ground', 'Control', 'To', 'Major', 'Tom']);
+// const results5 = map(words, word => word[0].toUpperCase() + word.slice(1));
+// assertArraysEqual(results5, ['Ground', 'Control', 'To', 'Major', 'Tom']);
 
-const results6 = map(nums, num => num > 3);
-assertArraysEqual(results6, [false, false, false, true, true]);
+// const results6 = map(nums, num => num > 3);
+// assertArraysEqual(results6, [false, false, false, true, true]);
+
+module.exports = map;
