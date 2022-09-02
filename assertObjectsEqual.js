@@ -1,46 +1,6 @@
-const eqArrays = function(actual, expected) {
-  for (const elmt of actual) {
-    if (typeof actual[elmt] === "string" && typeof expected[elmt] !== "string") {
-      return false;
-    }
-    if (typeof expected[elmt] === "string" && typeof actual[elmt] !== "string") {
-      return false;
-    }
-  }
-  for (const elmt in actual) {
-    if (actual[elmt] !== expected[elmt]) {
-      return false;
-    }
-    if (expected.length !== actual.length) {
-      return false;
-    }
-    if (actual[elmt] === expected[elmt]) {
-      return true;
-    }
-  }
-};
-
-const eqObjects = function(object1, object2) {
-  const keys1 = Object.keys(object1);
-  const keys2 = Object.keys(object2);
-
-  let result = true;
-
-  if (keys1.length !== keys2.length) {
-    return false;
-  }
-
-  for (const key in object1) {
-    if (Array.isArray(object1[key]) === true) {
-      return eqArrays(object1[key], object2[key]);
-    }
-
-    if (object1[key] === object2[key]) {
-      result = true;
-    }
-  }
-  return result;
-};
+// assertObjectsEqual.js
+const eqArrays = require('./eqArrays');
+const eqObjects = require('./eqObjects');
 
 const assertObjectsEqual = function(actual, expected) {
   const inspect = require('util').inspect;

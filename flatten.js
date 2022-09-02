@@ -1,33 +1,6 @@
-const eqArrays = function(actual, expected) {
-  for (const elmt of actual) {
-    if (typeof actual[elmt] === "string" && typeof expected[elmt] !== "string") {
-      return false;
-    }
-    if (typeof expected[elmt] === "string" && typeof actual[elmt] !== "string") {
-      return false;
-    }
-  }
-  for (const elmt in actual) {
-    if (actual[elmt] !== expected[elmt]) {
-      return false;
-    }
-    if (expected.length !== actual.length) {
-      return false;
-    }
-    if (actual[elmt] === expected[elmt]) {
-      return true;
-    }
-  }
-};
-
-const assertArraysEqual = function(actual, expected) {
-  if (eqArrays(actual, expected) === true) {
-    console.log(`✅✅✅ Assertion Passed: ${actual} === ${expected}`);
-  }
-  if (eqArrays(actual, expected) === false) {
-    console.log(`❌❌❌ Assertion Failed: ${actual} !== ${expected}`);
-  }
-};
+// flatten.js
+// const eqArrays = require('./eqArrays');
+// const assertArraysEqual = require('./assertArraysEqual');
 
 // A function which is passed an array of arrays as an argument
 // Returns a single "flattened" array
@@ -49,7 +22,6 @@ const flatten = function(arrays) {
   }
   return result;
 };
-
 
 // flatten([1, 2, [3, 4], 5, [6]]); // => [1, 2, 3, 4, 5, 6]
 // flatten([[1, 2, 3], 4, 5, [6]]); // => [1, 2, 3, 4, 5, 6]

@@ -1,8 +1,9 @@
+// middle.js
+
 // A function which returns only the middle element(s) of an array
 // arrays with 1 or 2 elements have no middle
 // arrays > 2 with an even number of elements return two middle elements
 // arrays > 2 with an uneven number of elements return one element
-
 const middle = function(array) {
   if(!Array.isArray(array)) {
     return undefined;

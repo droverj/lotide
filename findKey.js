@@ -1,11 +1,5 @@
-const assertEqual = function(actual, expected) {
-  if (actual === expected) {
-    console.log(`✅✅✅ Assertion Passed: ${actual} === ${expected}`);
-  }
-  if (actual !== expected) {
-    console.log(`❌❌❌ Assertion Failed: ${actual} !== ${expected}`);
-  }
-};
+// findKey.js
+const assertEqual = require('./assertEqual');
 
 // A function which takes in an object and a callback
 // The function returns the first key which returns a truthy value
@@ -20,7 +14,6 @@ const findKey = function(object, callback) {
 };
 
 // TEST CODE
-
 // const results1 = findKey({
 //   "Blue Hill":  { stars: 1 },
 //   "noma":       { stars: 2 },

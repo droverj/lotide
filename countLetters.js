@@ -1,8 +1,8 @@
 const assertEqual = require('./assertEqual');
 
-// function that takes in a sentence as a string
+// function that takes in a string
 // returns a count of each of the letters in that sentence
-// will return an object
+// returns an object
 const countLetters = function(sentence) {
   const result = {};
 
@@ -29,6 +29,7 @@ const countLetters = function(sentence) {
   return result;
 };
 
+// TEST CODE
 // const result1 = countLetters("hello");
 // // { "h": 1, "e": 1, "l": 2, "o": 1 };
 

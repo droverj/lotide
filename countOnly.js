@@ -1,21 +1,14 @@
-const assertEqual = function(actual, expected) {
-  if (actual === expected) {
-    console.log(`✅✅✅ Assertion Passed: ${actual} === ${expected}`);
-  }
-  if (actual !== expected) {
-    console.log(`❌❌❌ Assertion Failed: ${actual} !== ${expected}`);
-  }
-};
+// countOnly.js
+// const assertEqual = require('./assertEqual');
 
 // allItems: an array of strings that we need to look through
 // itemsToCount: an object specifying what to count
-
 const countOnly = function(allItems, itemsToCount) {
   let results = {};
 
   for (const item of allItems) {
     if (itemsToCount[item] === true) {
-      // condition set to only increment results counter if the item in itemsToCount is true
+      // condition set to only increment if the item in itemsToCount is true
       if (results[item]) {
         results[item] += 1;
         // sets a property inside the results object with the string of 'item' as the key
@@ -29,7 +22,8 @@ const countOnly = function(allItems, itemsToCount) {
   }
   return results;
 };
-// countOnly returns an object with a count on all the strings in allItems, the input array
+
+// TEST CODE
 
 // const firstNames = [
 //   "Karl",
@@ -49,5 +43,7 @@ const countOnly = function(allItems, itemsToCount) {
 // assertEqual(result1["Karima"], undefined); // true and does not appear in firstNames
 // assertEqual(result1["Fang"], 2); // true and appears in firstNames twice
 // assertEqual(result1["Agouhanna"], undefined); // false and appears in firstNames once
+
+// console.log(countOnly(["Anne", "Becky", "Crissy", "Becky"], { Jodie: true, Becky: true, Crissy: true }));
 
 module.exports = countOnly;
