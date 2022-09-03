@@ -83,7 +83,7 @@ const eqObjects = function(object1, object2) {
 // console.log(eqObjects(objs4, objs6)); // false
 
 // objs7 = { a: { a: { a: 1 }, b: [1, 2, 3] }, b: [1, 2, 3] };
-// objs8 = { a: { a: { a: 1 }, b: [1, 2, 3] }, b: [1, 2, 3] };
+// objs8 = { a: { a: { a: 1 }, b: [1, 2, 3] }, b: [1, 3, 3] };
 
 // console.log(eqObjects(objs7, objs8)); // false
 

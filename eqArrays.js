@@ -9,25 +9,17 @@ const eqArrays = function(actual, expected) {
   if (actual.length !== expected.length) {
     return false;
   }
-  for (const item in actual) {
-    if (Array.isArray(actual[item])) {
-      if (!eqArrays(actual[item], expected[item])) {
+  for (const [index, value] of actual.entries()) {
+    if (Array.isArray(value)) {
+      if (!eqArrays(actual[index], expected[index])) {
         return false;
       }
-    } else if (actual[item] !== expected[item]) {
+    } else if (actual[index] !== expected[index]) {
       return false
     }
   }
   return true;
 };
-
-console.log(eqArrays([1, 2, 3], [1, 2, 3])); // true
-console.log(eqArrays([1, 3, 3], [1, 2, 3])); // false
-console.log(eqArrays([1, [3, 3]], [1, [3, 3]])); // true
-console.log(eqArrays([1, [2, 3]], [1, [3, 3]])); // false
-console.log(eqArrays([1, [3, 3], [4, 5, 6]], [1, [3, 3], [4, 5, 6]])); // true
-console.log(eqArrays([1, [3, 3, [4, 5, 6]]], [1, [3, 3, [4, 5, 6]]])); // true
-console.log(eqArrays([1, [3, 3, [4, 5, 6]]], [1, [3, 3, [4, 5, [6]]]])); // false
 
 
 
