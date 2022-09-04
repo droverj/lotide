@@ -1,5 +1,4 @@
 // letterPositions.js
-// const eqArrays = require('./eqArrays');
 // const assertArraysEqual = require('./assertArraysEqual');
 
 const letterPositions = function(sentence) {
@@ -24,7 +23,8 @@ const letterPositions = function(sentence) {
 };
 
 // TEST CODE
-// letterPositions("hello");
+// console.log(letterPositions("hello"));
+// console.log(letterPositions("hello").e);
 // assertArraysEqual(letterPositions("hello").e, [1]);
 // assertArraysEqual(letterPositions("lighthouse in the house").h, [3, 5, 15, 18]);
 // assertArraysEqual(letterPositions(""), undefined);

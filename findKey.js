@@ -1,5 +1,5 @@
 // findKey.js
-const assertEqual = require('./assertEqual');
+// const assertEqual = require('./assertEqual');
 
 // A function which takes in an object and a callback
 // The function returns the first key which returns a truthy value

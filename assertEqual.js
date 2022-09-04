@@ -1,6 +1,6 @@
 // assertEqual.js
 
-// Assertion function to test if expected output returns true
+// Assertion function which prints a message stating if test passed or failed
 const assertEqual = function(actual, expected) {
   if (actual === expected) {
     console.log(`✅✅✅ Assertion Passed: ${actual} === ${expected}`);

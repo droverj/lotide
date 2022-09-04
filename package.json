@@ -1,7 +1,7 @@
 {
   "name": "@droverj/lotide",
-  "version": "1.0.0",
-  "description": "",
+  "version": "1.0.2",
+  "description": "Lotide is a mini clone of the lodash library created by @droverj as part of her learnings at Lighthouse Labs.",
   "main": "assertArraysEqual.js",
   "directories": {
     "test": "test"
@@ -14,7 +14,7 @@
     "url": "git+https://github.com/droverj/lotide.git"
   },
   "keywords": [],
-  "author": "",
+  "author": "@droverj",
   "license": "ISC",
   "bugs": {
     "url": "https://github.com/droverj/lotide/issues"

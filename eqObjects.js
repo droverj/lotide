@@ -1,3 +1,4 @@
+// eqObjects.js
 const eqArrays = require('./eqArrays');
 
 // function takes in two objects as the arguments

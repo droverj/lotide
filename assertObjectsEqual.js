@@ -1,6 +1,5 @@
 // assertObjectsEqual.js
-const eqArrays = require('./eqArrays');
-const eqObjects = require('./oldEqObjects');
+const eqObjects = require('./eqObjects');
 
 const assertObjectsEqual = function(actual, expected) {
   const inspect = require('util').inspect;

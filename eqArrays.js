@@ -3,6 +3,9 @@
 // A function that compares two arrays
 // Returns true if they're the same and false if they're not
 const eqArrays = function(actual, expected) {
+  if (!Array.isArray(actual)) {
+    return undefined;
+  }
   if (actual.length === 0) {
     return undefined;
   }
